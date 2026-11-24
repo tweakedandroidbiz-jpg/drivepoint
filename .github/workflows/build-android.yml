@@ -8,6 +8,8 @@ name: Build Android APK
 #
 # Tool versions match the DRIVEPOINT 0.1.0 project requirements
 # (Node.js 22 per the project README; Capacitor 7 with Java 21).
+# The ubuntu runner already includes the Android SDK, so no
+# separate SDK setup step is used.
 
 on:
   push:
@@ -53,9 +55,6 @@ jobs:
 
       - name: Sync Capacitor Android project
         run: npx cap sync android
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Build debug APK
         run: |
