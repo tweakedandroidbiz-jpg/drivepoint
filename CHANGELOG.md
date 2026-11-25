@@ -1,4 +1,4 @@
-# Changelog
+# DRIVEPOINT 0.2.1\n\n- Fixed mobile search-result selection handling and raised the results panel above map controls.\n\n# Changelog
 
 ## 0.2.0 — OEM map and navigation foundation
 - Replaced the crowded map dashboard with a minimal Kia UVO-inspired map-first screen.
