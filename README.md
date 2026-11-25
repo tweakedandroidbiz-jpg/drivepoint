@@ -2,27 +2,31 @@
 
 **DRIVEPOINT — An automotive-inspired Android navigation and infotainment application.**
 
-## Application — version 0.1.0
+## Application — version 0.1.2
 
-Development scaffold. An automotive-inspired Android navigation app with a
-classic 2010–2017 Material Design / OEM infotainment look.
+Classic OEM-inspired Android navigation foundation.
 
-Included in 0.1.0:
+Implemented in 0.1.2:
 
-- React + TypeScript + Material UI
-- MapLibre map view with OpenStreetMap raster tiles (with attribution)
-- Basic map controls and 2D/3D pitch toggle
-- Browser geolocation centering
-- Classic dark automotive UI shell
-- Capacitor Android configuration
+- Full-screen MapLibre map with floating OEM-style controls
+- Original top-down sedan marker as the default; optional direction-arrow
+  marker preference persists locally
+- Capacitor-native GPS permission, one-shot location and continuous watch
+  (with browser fallback)
+- Follow mode, heading-up option, zoom controls and 2D/3D perspective
+- Device GPS speed, estimated session distance, elapsed time and maximum
+  observed GPS speed
 
-Planned, not implemented yet: destination search and geocoding, routing and
-turn-by-turn guidance, GPS speed and trip computer, speed-limit awareness,
-road alerts, route simulation, voice guidance, media-session controls,
-saved destinations, and offline maps.
+Not implemented yet: destination search and geocoding, routing and
+turn-by-turn guidance, verified road identification, speed limits, live
+road alerts, Android media-session controls, saved trip history, Smart
+Arrival, offline maps and route simulation. Menu references to these are
+informational placeholders.
 
 Requirements: Node.js 22, npm. Map data is OpenStreetMap (ODbL, attribution
-required); no Google Maps data or API is used.
+required); no Google Maps data or API is used. GPS speed is device-reported
+and may be unavailable — it is not a replacement for a vehicle speedometer.
+Trip distance is a phone-location estimate, not odometer data.
 
 ## How it works
 
@@ -48,6 +52,7 @@ drivepoint/
 ├── src/                    # React application source
 ├── public/
 ├── android/                # Capacitor Android project (generated in CI if missing)
+├── CHANGELOG.md
 ├── .github/workflows/build-android.yml
 ├── .gitignore
 └── README.md
@@ -65,7 +70,8 @@ drivepoint/
 
 - Runs on every push to `main` and can be started manually from the
   GitHub Actions tab (`workflow_dispatch`).
-- Node.js 22, Java 21 (Temurin), Android SDK set up in the runner.
+- Node.js 22, Java 21 (Temurin). The ubuntu runner already includes the
+  Android SDK; Gradle runs from inside the `android/` folder.
 - Output: `app-debug.apk` as the `drivepoint-debug-apk` artifact.
 - A build cannot succeed until the application source code has been
   uploaded — a failed run before then is expected, not a broken workflow.
