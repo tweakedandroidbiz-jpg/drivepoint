@@ -58,9 +58,9 @@ jobs:
 
       - name: Build debug APK
         run: |
-          chmod +x android/gradlew
-          ./android/gradlew assembleDebug --no-daemon
-        working-directory: .
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+        working-directory: android
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
