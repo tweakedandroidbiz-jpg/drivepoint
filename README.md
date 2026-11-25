@@ -2,31 +2,40 @@
 
 **DRIVEPOINT — An automotive-inspired Android navigation and infotainment application.**
 
-## Application — version 0.1.2
+## Application — version 0.2.0
 
-Classic OEM-inspired Android navigation foundation.
+Classic OEM-inspired Android navigation system. Map-first, minimal Kia
+UVO-inspired screen.
 
-Implemented in 0.1.2:
+Implemented in 0.2.0:
 
-- Full-screen MapLibre map with floating OEM-style controls
-- Original top-down sedan marker as the default; optional direction-arrow
-  marker preference persists locally
-- Capacitor-native GPS permission, one-shot location and continuous watch
-  (with browser fallback)
-- Follow mode, heading-up option, zoom controls and 2D/3D perspective
-- Device GPS speed, estimated session distance, elapsed time and maximum
-  observed GPS speed
+- Destination search for addresses and points of interest, with selectable
+  geocoding results
+- Real driving routes drawn on the map using an OSRM-compatible routing
+  service, with a next-maneuver panel and route summary while navigating
+- Lane guidance when the routing response includes lane-level data
+  (valid lanes highlighted; missing lane data is not fabricated)
+- Nearby mapped speed-limit and school-zone notices from OpenStreetMap
+  road tags
+- Separate settings drawer for the marker, follow mode, heading-up, and
+  map perspective
+- Kept from 0.1.2: custom top-down sedan marker, Capacitor-native GPS
+  permission and continuous location watch, follow mode, heading-up,
+  2D/3D map controls
 
-Not implemented yet: destination search and geocoding, routing and
-turn-by-turn guidance, verified road identification, speed limits, live
-road alerts, Android media-session controls, saved trip history, Smart
-Arrival, offline maps and route simulation. Menu references to these are
-informational placeholders.
+Not implemented yet: automatic off-route detection and rerouting, spoken
+turn-by-turn guidance, reliable live traffic or camera data, full
+speed-limit coverage, saved places, route history, offline maps, Android
+Auto, and Android media-session integration.
 
 Requirements: Node.js 22, npm. Map data is OpenStreetMap (ODbL, attribution
-required); no Google Maps data or API is used. GPS speed is device-reported
-and may be unavailable — it is not a replacement for a vehicle speedometer.
-Trip distance is a phone-location estimate, not odometer data.
+required); no Google Maps data or API is used. The development build uses
+public OSM-ecosystem endpoints (tiles, Nominatim geocoding, OSRM demo
+routing, Overpass API) — not guaranteed production infrastructure, with
+usage policies and rate limits. Speed-limit and school-zone notices come
+from community-mapped OSM tags and can be missing, stale, or incorrect —
+always obey posted signs. GPS speed is device-reported and not a
+replacement for a vehicle speedometer.
 
 ## How it works
 
