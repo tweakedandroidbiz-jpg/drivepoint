@@ -2,10 +2,13 @@
 
 **DRIVEPOINT — An automotive-inspired Android navigation and infotainment application.**
 
-## Application — version 0.2.0
+## Application — version 0.2.1
 
 Classic OEM-inspired Android navigation system. Map-first, minimal Kia
 UVO-inspired screen.
+
+Fixed in 0.2.1: mobile search-result taps now select the destination, and
+the results panel sits above the map controls.
 
 Implemented in 0.2.0:
 
