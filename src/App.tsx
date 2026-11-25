@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import maplibregl, { Map as MapLibreMap, Marker } from 'maplibre-gl';
-import { Geolocation, Position } from '@capacitor/geolocation';
+import { Geolocation, type Position } from '@capacitor/geolocation';
 import { Capacitor } from '@capacitor/core';
 import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, Switch, Tooltip, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
