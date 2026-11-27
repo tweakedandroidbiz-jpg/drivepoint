@@ -1,4 +1,4 @@
-# DRIVEPOINT 0.2.1\n\n- Fixed mobile search-result selection handling and raised the results panel above map controls.\n\n# Changelog
+# Changelog
 
 ## 0.2.0 — OEM map and navigation foundation
 - Replaced the crowded map dashboard with a minimal Kia UVO-inspired map-first screen.
@@ -19,3 +19,10 @@
 - Follow mode, heading-up option, zoom controls and 2D/3D perspective.
 - Device GPS speed, estimated session distance, elapsed time and maximum observed GPS speed.
 - Retained Android packaging configuration and GitHub Actions APK workflow.
+
+
+## 0.3.0
+- Reworked destination selection and route startup.
+- Selecting a result now obtains GPS if no fix is available, then calculates the route.
+- Added coordinate validation, clearer routing/search errors, visible busy feedback, stale-search response protection, and map-style readiness handling before route rendering.
+- Added a visible 0.3.0 build identifier in the settings drawer.
